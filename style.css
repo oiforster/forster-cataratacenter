@@ -1094,9 +1094,26 @@ img {
   }
 
   /* Nav */
+  .nav {
+    justify-content: center;
+  }
+
+  .nav__logo-img {
+    height: 44px;
+  }
+
+  .nav--scrolled .nav__logo-img {
+    height: 38px;
+  }
+
   .nav__links,
   .nav__cta {
     display: none;
+  }
+
+  .nav__hamburger {
+    position: absolute;
+    right: var(--gutter);
   }
 
   .nav__hamburger {
