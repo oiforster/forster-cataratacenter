@@ -1138,18 +1138,34 @@ img {
     border-color: rgba(255, 255, 255, 0.25);
   }
 
-  /* Números */
+  /* Números — inline no mobile, estilo Apple */
   .numeros__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .numeros__item {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0;
   }
 
   .numeros__value {
     font-size: 2.5rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 72px;
+    text-align: right;
   }
 
   .numeros__label {
-    font-size: 0.8125rem;
+    font-size: 0.9375rem;
+    line-height: 1.35;
   }
 
   /* Sobre */
@@ -1179,6 +1195,18 @@ img {
 
   .servico-card--featured .servico-card__icon {
     grid-row: auto;
+  }
+
+  /* Títulos centralizados no mobile */
+  .servicos__header,
+  .equipe__header,
+  .depoimentos__header,
+  .sobre__text {
+    text-align: center;
+  }
+
+  .sobre__body--highlight {
+    text-align: left;
   }
 
   /* Equipe */
