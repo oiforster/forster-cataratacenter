@@ -1140,8 +1140,16 @@ img {
 
   /* Números */
   .numeros__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .numeros__value {
+    font-size: 2rem;
+  }
+
+  .numeros__label {
+    font-size: 0.75rem;
   }
 
   /* Sobre */
@@ -1207,7 +1215,16 @@ img {
 
 @media (max-width: 480px) {
   .numeros__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .numeros__value {
+    font-size: 1.75rem;
+  }
+
+  .numeros__label {
+    font-size: 0.6875rem;
   }
 
   .servico-card {
