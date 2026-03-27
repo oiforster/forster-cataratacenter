@@ -1144,13 +1144,13 @@ img {
     flex-direction: column;
     gap: 1.5rem;
     text-align: left;
-    max-width: 320px;
+    max-width: 340px;
     margin: 0 auto;
   }
 
   .numeros__item {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 1rem;
     padding: 0;
   }
@@ -1160,7 +1160,7 @@ img {
     margin-bottom: 0;
     flex-shrink: 0;
     width: 72px;
-    text-align: right;
+    text-align: center;
   }
 
   .numeros__label {
