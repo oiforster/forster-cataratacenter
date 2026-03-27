@@ -1227,6 +1227,23 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .contato__info {
+    text-align: center;
+  }
+
+  .contato__details {
+    align-items: center;
+  }
+
+  .contato__item {
+    align-items: center;
+  }
+
+  .contato__map-card {
+    text-align: center;
+    align-items: center;
+  }
+
   .contato__map {
     min-height: 280px;
   }
