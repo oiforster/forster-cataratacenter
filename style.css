@@ -1158,8 +1158,14 @@ img {
   }
 
   .sobre__image {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     order: -1;
+    overflow: hidden;
+  }
+
+  .sobre__image img {
+    object-fit: cover;
+    object-position: center 30%;
   }
 
   /* Serviços */
