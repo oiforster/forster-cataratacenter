@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Scroll reveal ---
-  const revealElements = document.querySelectorAll('.reveal');
+  const revealElements = document.querySelectorAll('.reveal, .reveal--left, .reveal--right');
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
         // Stagger animation delay
-        const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+        const siblings = entry.target.parentElement.querySelectorAll('.reveal, .reveal--left, .reveal--right');
         let siblingIndex = 0;
         siblings.forEach((sib, i) => {
           if (sib === entry.target) siblingIndex = i;

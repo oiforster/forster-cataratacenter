@@ -40,7 +40,7 @@
   --gray-900: #171717;
 
   /* Fonts */
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 
   /* Layout */
@@ -187,7 +187,8 @@ img {
 
 .btn--ghost:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: var(--marsala-light);
+  color: var(--white);
 }
 
 .btn--lg {
@@ -397,6 +398,17 @@ img {
   background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);
 }
 
+/* Noise texture overlay */
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .hero__content {
   position: relative;
   z-index: 2;
@@ -426,7 +438,7 @@ img {
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--gold-light);
   margin-bottom: 2rem;
 }
 
@@ -551,6 +563,11 @@ img {
   align-items: start;
 }
 
+.sobre__bottom {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  max-width: 720px;
+}
+
 .sobre .title {
   margin-bottom: 2.5rem;
 }
@@ -627,6 +644,7 @@ img {
   transform: translateY(-4px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
   border-color: var(--teal-light);
+  border-top: 3px solid var(--marsala);
 }
 
 
@@ -689,6 +707,12 @@ img {
   background: var(--white);
   border-radius: 16px;
   border: 1px solid var(--gray-100);
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+
+.equipe__card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
 }
 
 .equipe__photo {
@@ -770,6 +794,7 @@ img {
   background: var(--gray-50);
   border-radius: 16px;
   border: 1px solid var(--gray-100);
+  border-left: 3px solid var(--marsala);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -808,7 +833,7 @@ img {
   min-height: 100vh;
   min-height: 100svh;
   padding: clamp(5rem, 10vw, 8rem) 0;
-  background: var(--teal-subtle);
+  background: linear-gradient(135deg, var(--teal-subtle) 0%, rgba(122, 45, 58, 0.06) 100%);
 
   display: flex;
   align-items: center;
@@ -849,6 +874,7 @@ img {
    CONTATO
    ============================================ */
 .contato {
+  position: relative;
   min-height: 100vh;
   min-height: 100svh;
   padding: clamp(5rem, 10vw, 8rem) 0;
@@ -857,6 +883,15 @@ img {
 
   display: flex;
   align-items: center;
+}
+
+.contato::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
 }
 
 .contato .container {
@@ -1046,9 +1081,23 @@ img {
               transform 0.7s var(--ease-out);
 }
 
+.reveal--left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s var(--ease-out),
+              transform 0.7s var(--ease-out);
+}
+
+.reveal--right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s var(--ease-out),
+              transform 0.7s var(--ease-out);
+}
+
 .reveal--visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0);
 }
 
 /* ============================================
