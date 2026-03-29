@@ -63,6 +63,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
+  // --- Video sound toggle ---
+  const soundBtn = document.querySelector('.sobre__sound-btn');
+  const soundLabel = document.querySelector('.sobre__sound-label');
+  const sobreVideo = document.querySelector('.sobre__video video');
+
+  if (soundBtn && sobreVideo) {
+    soundBtn.addEventListener('click', () => {
+      sobreVideo.muted = !sobreVideo.muted;
+      soundBtn.classList.toggle('sobre__sound-btn--active');
+      soundLabel.textContent = sobreVideo.muted ? 'Ativar som' : 'Som ativado';
+      soundBtn.setAttribute('aria-label', sobreVideo.muted ? 'Ativar som do vídeo' : 'Desativar som do vídeo');
+    });
+  }
+
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     const href = link.getAttribute('href');
