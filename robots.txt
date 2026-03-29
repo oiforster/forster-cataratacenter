@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cataratacenter.forsterfilmes.com/sitemap.xml
