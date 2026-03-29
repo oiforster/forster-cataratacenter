@@ -86,6 +86,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Equipe video: play on viewport + sound toggle ---
+  const equipeSoundBtn = document.querySelector('.equipe__sound-btn');
+  const equipeSoundLabel = document.querySelector('.equipe__sound-label');
+  const equipeVideo = document.querySelector('.equipe__video video');
+
+  if (equipeVideo) {
+    // Play when visible
+    const equipeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          equipeVideo.play();
+        } else {
+          equipeVideo.pause();
+        }
+      });
+    }, { threshold: 0.3 });
+    equipeObserver.observe(equipeVideo);
+
+    // Sound toggle
+    if (equipeSoundBtn) {
+      equipeSoundBtn.addEventListener('click', () => {
+        if (equipeVideo.muted) {
+          equipeVideo.muted = false;
+          equipeVideo.pause();
+          equipeVideo.play();
+          equipeSoundBtn.classList.add('equipe__sound-btn--active');
+          equipeSoundLabel.textContent = 'Som ativado';
+          equipeSoundBtn.setAttribute('aria-label', 'Desativar som do vídeo');
+        } else {
+          equipeVideo.muted = true;
+          equipeSoundBtn.classList.remove('equipe__sound-btn--active');
+          equipeSoundLabel.textContent = 'Ativar som';
+          equipeSoundBtn.setAttribute('aria-label', 'Ativar som do vídeo');
+        }
+      });
+    }
+  }
+
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     const href = link.getAttribute('href');

@@ -126,10 +126,7 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <!-- TODO: substituir gradiente por vídeo compilado (Samuel edita no fim de semana) -->
-      <!-- <video class="hero__bg-video" autoplay muted loop playsinline poster="img/hero-poster.jpg">
-        <source src="img/hero-video.mp4" type="video/mp4">
-      </video> -->
+      <img class="hero__bg-img" src="img/fachada-catarata-center-novo-hamburgo.jpg" alt="" width="1920" height="1080">
       <div class="hero__bg-gradient"></div>
     </div>
     <div class="hero__content">
@@ -188,7 +185,7 @@
           </p>
         </div>
         <div class="sobre__video reveal--right">
-          <video autoplay muted loop playsinline preload="metadata" poster="img/catarata-center-apresentacao.jpg" width="560" height="315">
+          <video autoplay muted loop playsinline preload="metadata" poster="img/fachada-catarata-center-novo-hamburgo.jpg" width="1920" height="1080">
             <source src="img/apresentacao-catarata.mp4" type="video/mp4">
           </video>
           <button class="sobre__sound-btn" type="button" aria-label="Ativar som do vídeo">
@@ -278,32 +275,46 @@
         <h2 class="title reveal">Quem cuida dos<br>seus <em>olhos.</em></h2>
       </div>
 
-      <div class="equipe__grid">
-        <div class="equipe__card reveal">
-          <div class="equipe__photo">
-            <img src="img/dra-juliana-rocha-oftalmologista-novo-hamburgo.jpg" alt="Dra. Juliana Fernandes de Sá Rocha — Oftalmologista" width="160" height="200" loading="lazy">
-          </div>
-          <h3 class="equipe__name">Dra. Juliana Rocha</h3>
-          <p class="equipe__role">Oftalmologista — Diretora Clínica</p>
-          <a href="https://instagram.com/drajulianarocha_catarata" target="_blank" rel="noopener noreferrer" class="equipe__social">@drajulianarocha_catarata</a>
+      <div class="equipe__layout">
+        <div class="equipe__video reveal--left">
+          <video muted loop playsinline preload="metadata" poster="img/dra-juliana-rocha-consultorio.jpg" width="480" height="854">
+            <source src="img/dra-juliana-10-anos-catarata-center.mp4" type="video/mp4">
+          </video>
+          <button class="equipe__sound-btn" type="button" aria-label="Ativar som do vídeo">
+            <svg class="equipe__sound-icon equipe__sound-icon--off" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+            <svg class="equipe__sound-icon equipe__sound-icon--on" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            <span class="equipe__sound-label">Ativar som</span>
+          </button>
+          <p class="equipe__video-caption">Dra. Juliana Rocha — 10 anos do Catarata Center</p>
         </div>
 
-        <div class="equipe__card reveal">
-          <div class="equipe__photo">
-            <img src="img/dra-juliana-moro-oftalmologista.jpg" alt="Dra. Juliana Moro — Oftalmologista" width="160" height="200" loading="lazy">
+        <div class="equipe__grid">
+          <div class="equipe__card reveal">
+            <div class="equipe__photo">
+              <img src="img/dra-juliana-rocha-consultorio.jpg" alt="Dra. Juliana Fernandes de Sá Rocha — Oftalmologista no consultório" width="160" height="200" loading="lazy">
+            </div>
+            <h3 class="equipe__name">Dra. Juliana Rocha</h3>
+            <p class="equipe__role">Oftalmologista — Diretora Clínica</p>
+            <a href="https://instagram.com/drajulianarocha_catarata" target="_blank" rel="noopener noreferrer" class="equipe__social">@drajulianarocha_catarata</a>
           </div>
-          <h3 class="equipe__name">Dra. Juliana Moro</h3>
-          <p class="equipe__role">Oftalmologista</p>
-          <a href="https://instagram.com/julianamorooftalmo" target="_blank" rel="noopener noreferrer" class="equipe__social">@julianamorooftalmo</a>
-        </div>
 
-        <div class="equipe__card reveal">
-          <div class="equipe__photo">
-            <img src="img/dr-licio-araujo-oftalmologista.jpg" alt="Dr. Lício Araújo — Oftalmologista" width="160" height="200" loading="lazy">
+          <div class="equipe__card reveal">
+            <div class="equipe__photo">
+              <img src="img/dra-juliana-moro-oftalmologista.jpg" alt="Dra. Juliana Moro — Oftalmologista" width="160" height="200" loading="lazy">
+            </div>
+            <h3 class="equipe__name">Dra. Juliana Moro</h3>
+            <p class="equipe__role">Oftalmologista</p>
+            <a href="https://instagram.com/julianamorooftalmo" target="_blank" rel="noopener noreferrer" class="equipe__social">@julianamorooftalmo</a>
           </div>
-          <h3 class="equipe__name">Dr. Lício Araújo</h3>
-          <p class="equipe__role">Oftalmologista</p>
-          <a href="https://instagram.com/licio.oftalmo" target="_blank" rel="noopener noreferrer" class="equipe__social">@licio.oftalmo</a>
+
+          <div class="equipe__card reveal">
+            <div class="equipe__photo">
+              <img src="img/dr-licio-araujo-oftalmologista.jpg" alt="Dr. Lício Araújo — Oftalmologista" width="160" height="200" loading="lazy">
+            </div>
+            <h3 class="equipe__name">Dr. Lício Araújo</h3>
+            <p class="equipe__role">Oftalmologista</p>
+            <a href="https://instagram.com/licio.oftalmo" target="_blank" rel="noopener noreferrer" class="equipe__social">@licio.oftalmo</a>
+          </div>
         </div>
       </div>
     </div>
@@ -341,6 +352,23 @@
             <span class="depoimento-card__detail">Paciente — Consulta Oftalmológica</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRISMA ESPECIALIDADES -->
+  <section class="prisma">
+    <div class="container">
+      <div class="prisma__content reveal">
+        <p class="eyebrow">Mesmo grupo</p>
+        <h2 class="title">Mesmo cuidado,<br><em>mais especialidades.</em></h2>
+        <p class="prisma__body">
+          O Catarata Center faz parte do grupo Prisma Especialidades — referência em oftalmologia no Vale dos Sinos há mais de 11 anos, com 3 unidades e mais de 15 mil pacientes atendidos por ano. Consultas, exames e cirurgias em um só ecossistema.
+        </p>
+        <a href="https://prismaclinicadeolhos.com.br" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+          Conhecer a Prisma Especialidades
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
       </div>
     </div>
   </section>
