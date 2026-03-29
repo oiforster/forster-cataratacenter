@@ -6,16 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- NAV scroll behavior ---
   const nav = document.getElementById('nav');
-  let lastScroll = 0;
 
   function updateNav() {
-    const scrollY = window.scrollY;
-    if (scrollY > 80) {
+    if (window.scrollY > 80) {
       nav.classList.add('nav--scrolled');
     } else {
       nav.classList.remove('nav--scrolled');
     }
-    lastScroll = scrollY;
   }
 
   window.addEventListener('scroll', updateNav, { passive: true });
@@ -68,8 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === '#') return;
     link.addEventListener('click', (e) => {
-      const target = document.querySelector(link.getAttribute('href'));
+      const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         const offset = nav.offsetHeight + 20;
