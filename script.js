@@ -70,10 +70,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (soundBtn && sobreVideo) {
     soundBtn.addEventListener('click', () => {
-      sobreVideo.muted = !sobreVideo.muted;
-      soundBtn.classList.toggle('sobre__sound-btn--active');
-      soundLabel.textContent = sobreVideo.muted ? 'Ativar som' : 'Som ativado';
-      soundBtn.setAttribute('aria-label', sobreVideo.muted ? 'Ativar som do vídeo' : 'Desativar som do vídeo');
+      if (sobreVideo.muted) {
+        sobreVideo.muted = false;
+        sobreVideo.pause();
+        sobreVideo.play();
+        soundBtn.classList.add('sobre__sound-btn--active');
+        soundLabel.textContent = 'Som ativado';
+        soundBtn.setAttribute('aria-label', 'Desativar som do vídeo');
+      } else {
+        sobreVideo.muted = true;
+        soundBtn.classList.remove('sobre__sound-btn--active');
+        soundLabel.textContent = 'Ativar som';
+        soundBtn.setAttribute('aria-label', 'Ativar som do vídeo');
+      }
     });
   }
 
