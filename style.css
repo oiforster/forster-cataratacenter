@@ -54,6 +54,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -371,7 +372,7 @@ img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
+  scroll-snap-align: start;
 }
 
 .hero__bg {
@@ -550,6 +551,10 @@ img {
 /* ============================================
    SOBRE
    ============================================ */
+.sobre, .servicos, .equipe, .depoimentos, .prisma, .cta-final, .contato {
+  scroll-snap-align: start;
+}
+
 .sobre {
   min-height: 100vh;
   min-height: 100svh;
@@ -1278,13 +1283,19 @@ img {
 }
 
 @media (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+  }
+
   .sobre,
   .servicos,
   .equipe,
   .depoimentos,
+  .prisma,
   .cta-final,
   .contato {
     min-height: auto;
+    scroll-snap-align: none;
   }
 
   /* Nav */
