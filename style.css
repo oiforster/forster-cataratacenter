@@ -54,7 +54,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -551,8 +551,18 @@ img {
 /* ============================================
    SOBRE
    ============================================ */
-.sobre, .servicos, .equipe, .depoimentos, .prisma, .cta-final, .contato {
+.sobre, .servicos, .equipe, .depoimentos, .prisma, .cta-final, .contato, .footer {
   scroll-snap-align: start;
+}
+
+/* Desktop: forçar seções a 100vh pra snap funcionar */
+@media (min-width: 769px) {
+  .prisma {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .sobre {
